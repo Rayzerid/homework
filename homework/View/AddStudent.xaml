@@ -1,0 +1,39 @@
+﻿<Window
+    x:Class="homework.View.AddStudent"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:homework.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddStudent"
+    Width="260"
+    Height="250"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock Text="Группа" />
+            <TextBox
+                Width="250"
+                Height="50"
+                FontSize="25"
+                Text="{Binding Path=Groups}"
+                TextAlignment="Center" />
+            <TextBlock Text="ФИО" />
+            <TextBox
+                Width="250"
+                Height="50"
+                FontSize="25"
+                Text="{Binding Path=FIOS}"
+                TextAlignment="Center" />
+            <TextBlock Text="День Рождения" />
+            <DatePicker SelectedDate="{Binding Path=Birthdays, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}" />
+            <Button Margin="0,5,0,0" Command="{Binding SaveAddCommand}">
+                <TextBlock Text="Сохранить" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
